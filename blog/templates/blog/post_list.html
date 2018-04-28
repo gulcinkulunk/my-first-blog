@@ -1,17 +1,13 @@
-<html>
-<head>
-	<title>Django Girls Blog</title>
-</head>
-<body>
-	<div>
-		<h1><a href="/">Django Girls Blog</a></h1>
-	</div>
-	<div>
-		<p>yayın tarihi : 28.04.2018, 15:53</p>
-		<h2><a href="">İlk Gönderim</h2>
-			<p>Süper!
 
-	</div>
 
-</body>
-</html>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
